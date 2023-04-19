@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author nedim
- *
- */
-module companyProductPromotion {
-}
