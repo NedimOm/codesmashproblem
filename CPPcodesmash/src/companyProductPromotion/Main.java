@@ -31,6 +31,7 @@ public class Main {
         	int j=0;
         	int numberOfSpaces=0;
             while(i < codeListOfLists.get(indexOfGroup).size()){
+            	if(indexOfFruitPurchased + j == shoppingCart.size()) {fruitComparing = false; break;}
                 String fruit = codeListOfLists.get(indexOfGroup).get(i).trim();
     
                 //ako je anything onda je ok ili ako je isti proizvod, ukoliko smo naisli na neki proizvod koji nije u grupi prekidamo petlju
@@ -41,6 +42,7 @@ public class Main {
                 }
                 i++;
                 j++;
+         
             }
             //ako je pronadjena grupa u kupovini, pomjeamo indeks kupovine za velicinu grupe
             //takodjer pomjerano indeks kombinacije kako bi presli na sljedecu grupu
