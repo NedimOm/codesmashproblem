@@ -16,7 +16,7 @@ apple\
 orange\
 banana\
 orange\
-banana\
+banana
 
 Također, uočili smo mogućnost slučajnog unosa dva ili više razmaka, pa smo i taj problem adekvatno riješili.
 
