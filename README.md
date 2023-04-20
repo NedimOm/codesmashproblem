@@ -10,7 +10,8 @@ Primjer unosa u konzoli našeg programa za codeList=[[apple, apple],[banana, any
 
 2\
 apple apple\
-banana anything banana 6\
+banana anything banana\
+6\
 apple\
 apple\
 orange\
