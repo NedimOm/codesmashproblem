@@ -8,13 +8,14 @@ import java.util.Scanner;
 public class Main {
 	
     public static int IsBuyerWinner(List<String> codeList, List<String> shoppingCart) {
-    	if(codeList.size()==0) return 1; //ako nema kombinacije svako moze pobijediti
+    	if(codeList.size()==0) return 1; //ako nema dobitne kombinacije svako moze pobijediti
     	if(shoppingCart.size()==0) return 0; //ako je prazna kupovina i postoji kombinacija to znaci da ne mozemo pobijediti
     	
     	int indexOfGroup = 0, indexOfFruitPurchased = 0; 
-
+    	
+    	//sve dok ima grupa i sve dok ima preostalog kupljenog voca
         while (indexOfGroup < codeList.size() && indexOfFruitPurchased < shoppingCart.size()) {
-            //sve dok ima grupa i sve dok ima preostalog kupljenog voca
+        	
         	boolean fruitComparing = true;
 
         	//trazenje trenutne grupe u kupovini, dakle grupe moraju ici redom, svaki element u grupi mora biti jedan za drugim
