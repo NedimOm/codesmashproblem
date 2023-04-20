@@ -6,17 +6,17 @@ Ovaj problem smo rješavali u programskom jeziku Java, uz napomenu da smo dobije
 ## Unos podataka:
 
 Prva stvar, što se tiče unosa podataka, na osnovu urneka shvatili smo da je potrebno unijeti od koliko grupa se sastoji dobitna kombinacija (codeList), a zatim svaku grupu unositi posebno u svaki red sa razmakom između voća. Također, unos kupovine se obavlja tako što se prvo unese koliko je voća kupljeno, a zatim svako voće posebno u svaki red.
-Primjer unosa u konzoli našeg programa za codeList=[[apple, apple],[banana, anything, banana]] i shoppingCart = [apple, apple, orange, banana, orange, banana] bio bi sljedeći:
+Primjer unosa u konzoli našeg programa za codeList=[[apple, apple],[banana, anything, banana]] i shoppingCart = [apple, apple, orange, banana, orange, banana] bio bi sljedeći:\
 
-2
-apple apple
-banana anything banana 6
-apple
-apple
-orange
-banana
-orange
-banana
+2\
+apple apple\
+banana anything banana 6\
+apple\
+apple\
+orange\
+banana\
+orange\
+banana\
 
 Također, uočili smo mogućnost slučajnog unosa dva ili više razmaka, pa smo i taj problem adekvatno riješili.
 
