@@ -23,7 +23,7 @@ Također, uočili smo mogućnost slučajnog unosa dva ili više razmaka, pa smo 
 
 ## Algoritam:
 
-Prije početka algoritma, inicijaliziramo početne vrijednosti dva pokazivača indexOfCode (pokazivac na element u trenutnoj grupi) i indexOfFruitPurchased (pokazivač na listu shoppingCart), te jednog pomoćnog pokazivača koji nam govori koja je grupa trenutna. Zatim pokreće se while petlja koja se izvršava sve dok postoji neobrađena grupa i dok postoji još voća u shoppingCart.
+Prije početka algoritma, inicijaliziramo početne vrijednosti dva pokazivača indexOfCode (pokazivač na element u trenutnoj grupi) i indexOfFruitPurchased (pokazivač na listu shoppingCart), te jednog pomoćnog pokazivača koji nam govori koja je grupa trenutna. Zatim pokreće se while petlja koja se izvršava sve dok postoji neobrađena grupa i dok postoji još voća u shoppingCart.
 Dalje, logika je sljedeća, ukoliko se vrijednosti na pokazivačima ne podudaraju, pomjeramo se na sljedeci element u listi shoppingCart, te ukoliko nismo na početku trenutne grupe, vraćamo se na početak grupe.
 
 Drugi slučaj imamo kada je vrijednost elementa u grupi “anything” ili ako se elementi na pokazivačima podudaraju, tada oba pokazivača pomjeramo za jedan korak naprijed i nastavljamo dalje provjeru.
