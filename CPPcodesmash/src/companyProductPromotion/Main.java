@@ -8,48 +8,24 @@ import java.util.Scanner;
 public class Main {
 	
     public static int IsBuyerWinner(List<String> codeList, List<String> shoppingCart) {
-    	if(codeList.size()==0) return 1; //ako nema dobitne kombinacije svako moze pobijediti
-    	if(shoppingCart.size()==0) return 0; //ako je prazna kupovina i postoji kombinacija to znaci da ne mozemo pobijediti
+    	if(codeList.size()==0) return 1; 
+    	if(shoppingCart.size()==0) return 0;
     	
-    	int indexOfGroup = 0, indexOfFruitPurchased = 0; 
+    	int indexOfGroup = 0, indexOfFruitPurchased = 0, indexOfCode = 0; 
     	
-    	//sve dok ima grupa i sve dok ima preostalog kupljenog voca
-        while (indexOfGroup < codeList.size() && indexOfFruitPurchased < shoppingCart.size()) {
-        	
-        	boolean fruitComparing = true;
-
-        	//trazenje trenutne grupe u kupovini, dakle grupe moraju ici redom, svaki element u grupi mora biti jedan za drugim
-        	//dok grupe ne moraju biti jedna uz drugu, moze biti nekih proizvoda izmedju grupa u kupovini
-        	//bitno je samo da se ispostuje redoslijed grupa
-        	
-        	int i=0;
-        	int j=0;
-        	int numberOfSpaces=0;
-            while(i < codeList.get(indexOfGroup).split(" ").length){
-            	if(indexOfFruitPurchased + j == shoppingCart.size()) {fruitComparing = false; break;}
-                String fruit = Arrays.asList(codeList.get(indexOfGroup).split(" ")).get(i);
-                //ako je anything onda je ok ili ako je isti proizvod, ukoliko smo naisli na neki proizvod koji nije u grupi prekidamo petlju
-                if(fruit.equals("")) {numberOfSpaces++; i++; continue;}
-                else if (!fruit.equals("anything") && !shoppingCart.get(indexOfFruitPurchased + j).equals(fruit)) {
-                    fruitComparing = false;
-                    break;
-                }
-                i++;
-                j++;
+    	while (indexOfGroup < codeList.size() && indexOfFruitPurchased < shoppingCart.size()) {
+    		
+    		String fruit = codeList.get(indexOfGroup).split(" ")[indexOfCode];
+ 
+    		if(fruit.equals("")) indexOfCode++;
+            else if (!fruit.equals("anything") && !shoppingCart.get(indexOfFruitPurchased).equals(fruit))
+                {if(indexOfCode==0) indexOfFruitPurchased++; else indexOfCode=0;}
+            else
+            	{indexOfCode++; indexOfFruitPurchased++;}
          
-            }
-            //ako je pronadjena grupa u kupovini, pomjeramo indeks kupovine za velicinu grupe
-            //takodjer pomjeramo indeks kombinacije kako bi presli na sljedecu grupu
-            if (fruitComparing) {
-                indexOfFruitPurchased += codeList.get(indexOfGroup).split(" ").length-numberOfSpaces;;
-                indexOfGroup++;
-            //ukoliko nismo pronasli grupu, samo prelazimo na sljedeci proizvod u kupovini
-            } else {
-                indexOfFruitPurchased++;
-            }
-        }
-        //ukoliko je indeks kombinacije uspio dosegnuti velicinu kombinacije to znaci da smo pronasli sve grupe
-        //dakle kupac je zadovoljio kombinaciju, inace prekinuli smo while petlju prije nego smo pronasli sve grupe pa nismo zadovoljili kombinaciju
+            if(indexOfCode==codeList.get(indexOfGroup).split(" ").length)
+            	{indexOfGroup++; indexOfCode=0;}
+    	}
         if(indexOfGroup == codeList.size())
         	return 1;
         return 0;
